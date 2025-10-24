@@ -25,7 +25,7 @@ export default function Data() {
   ];
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/return/requests")
+    fetch(`${process.env.API_URL}`)
       .then(res => res.json())
       .then(result => {
         if (result.success && Array.isArray(result.data)) {
